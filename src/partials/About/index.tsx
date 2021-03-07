@@ -12,10 +12,11 @@ import * as countriesActions from '../../redux/actions/countries';
 import Container from '../../components/Container';
 import Preloader from '../../components/Preloader';
 import Error from '../../components/Error';
+import CountryAbout from '../../components/CountryAbout';
 
 import { useGetCountry } from '../../hooks/countries/useCountries';
 
-function About({ saveContry }: any) {
+function About({ countrySelected, saveContry }: any) {
   const { name }: any = useParams();
   const { loading, data, error } = useGetCountry(name);
 
@@ -35,6 +36,10 @@ function About({ saveContry }: any) {
 
       {
         error && <Error error={error} />
+      }
+      {
+        countrySelected
+        && <CountryAbout country={countrySelected} />
       }
 
     </Container>
