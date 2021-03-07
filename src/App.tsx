@@ -2,13 +2,23 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import { MapDispatchToProps } from './utils/props';
 import * as countriesActions from './redux/actions/countries';
 
-function App(props: any) {
-  console.log(props);
+import Home from './partials/Home';
+
+function App() {
   return (
-    <div>Hello world</div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+      </Switch>
+    </Router>
   );
 }
 
