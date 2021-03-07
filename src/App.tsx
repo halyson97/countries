@@ -10,9 +10,12 @@ import * as countriesActions from './redux/actions/countries';
 import Home from './partials/Home';
 import About from './partials/About';
 
+import Header from './components/Header';
+
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/about/:name">
           <About />
