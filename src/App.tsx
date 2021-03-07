@@ -8,11 +8,15 @@ import { MapDispatchToProps } from './utils/props';
 import * as countriesActions from './redux/actions/countries';
 
 import Home from './partials/Home';
+import About from './partials/About';
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/about/:name">
+          <About />
+        </Route>
         <Route exact path="/">
           <Home />
         </Route>

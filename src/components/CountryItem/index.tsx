@@ -64,7 +64,7 @@ const useStyles = makeStyles(() => ({
 const CountryItem: React.FC<{ country: any }> = ({ country }: { country: any }) => {
   const classes = useStyles();
   return (
-    <Link to={`/countries/${country.name}`} className={classes.link}>
+    <Link to={`/about/${country.name}`} className={classes.link}>
       <div className={classes.root}>
         <div>
           <img className={classes.image} src={country.flag.svgFile} alt={`Bandeira ${country.name}`} />

@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 
 import { useDebounce } from 'use-debounce/lib';
 
-import { MapDispatchToProps } from '../utils/props';
-import * as countriesActions from '../redux/actions/countries';
-import Container from '../components/Container';
-import Preloader from '../components/Preloader';
-import Error from '../components/Error';
-import CountriesList from '../components/CountriesList';
-import SearchInput from '../components/SearchInput';
+import { MapDispatchToProps } from '../../utils/props';
+import * as countriesActions from '../../redux/actions/countries';
+import Container from '../../components/Container';
+import Preloader from '../../components/Preloader';
+import Error from '../../components/Error';
+import CountriesList from '../../components/CountriesList';
+import SearchInput from '../../components/SearchInput';
 
-import { useGetCountries } from '../hooks/countries/useGetCountries';
+import { useGetCountries } from '../../hooks/countries/useCountries';
 
-import { prepareString } from '../utils/string';
+import { prepareString } from '../../utils/string';
 
 function Home({ saveContries, countriesState }: any) {
   const { loading, data, error } = useGetCountries();
