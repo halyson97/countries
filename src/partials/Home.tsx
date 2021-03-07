@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { MapDispatchToProps } from '../utils/props';
 import * as countriesActions from '../redux/actions/countries';
 import Container from '../components/Container';
+import Preloader from '../components/Preloader';
 
 import { useGetCountries } from '../hooks/countries/useGetCountries';
 
@@ -15,6 +16,10 @@ function Home() {
   console.log('error: ', error);
   return (
     <Container>
+      {
+        loading && <Preloader />
+      }
+
       <div>Partial home</div>
     </Container>
   );
