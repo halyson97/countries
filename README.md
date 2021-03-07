@@ -3,7 +3,7 @@ Projeto para listar os países do mundo consumindo a api do [Graph countries](ht
 
 ## Features
 - Buscando e listando os países do mundo
-- Possibilidade do usuário pesquisar entre os países
+- Possibilidade do usuário pesquisar por nome e capital dos países
 - Tela de mais detalhes ao selecionar o país
 - Possibilidade de editar o país, salvando localmente
 
@@ -39,6 +39,11 @@ Para executar o app em modo desenvolvimento, basta:
 # subir servidor local
 npm start
 ```
+
+## Demo
+
+[https://countries-nine-coral.vercel.app/](https://countries-nine-coral.vercel.app/)
+
 
 ## 
 Desenvolvido por [Halyson Rezende](https://github.com/halyson97).
