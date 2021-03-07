@@ -5,6 +5,14 @@ export function saveContries(countries: Array<any>) {
   };
 }
 
+export function saveContry(country: any) {
+  return {
+    type: 'CHANGE_COUNTRY',
+    country,
+  };
+}
+
 export default {
   saveContries,
+  saveContry,
 };

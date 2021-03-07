@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   useParams,
@@ -15,9 +15,15 @@ import Error from '../../components/Error';
 
 import { useGetCountry } from '../../hooks/countries/useCountries';
 
-function About() {
+function About({ saveContry }: any) {
   const { name }: any = useParams();
   const { loading, data, error } = useGetCountry(name);
+
+  useEffect(() => {
+    if (data) {
+      saveContry(data.Country[0]);
+    }
+  }, [data]);
 
   console.log(data);
 
@@ -36,7 +42,7 @@ function About() {
 }
 
 const mapStateToProps = (state: any) => ({
-  countriesState: state.countries.countries,
+  countrySelected: state.countries.country,
 });
 
 export default connect(mapStateToProps, MapDispatchToProps({
