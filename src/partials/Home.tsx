@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 
@@ -10,11 +10,15 @@ import Error from '../components/Error';
 
 import { useGetCountries } from '../hooks/countries/useGetCountries';
 
-function Home() {
+function Home({ saveContries, countriesState }: any) {
   const { loading, data, error } = useGetCountries();
-  console.log(data);
-  console.log('isloading', loading);
-  console.log('error: ', error);
+
+  useEffect(() => {
+    if (data) {
+      saveContries(data.Country);
+    }
+  }, [data]);
+
   return (
     <Container>
       {
@@ -25,13 +29,17 @@ function Home() {
         error && <Error error={error} />
       }
 
-      <div>Partial home</div>
+      {
+        !loading
+        && countriesState
+        && <div>Partial home</div>
+      }
     </Container>
   );
 }
 
 const mapStateToProps = (state: any) => ({
-  countriesState: state.countries,
+  countriesState: state.countries.countries,
 });
 
 export default connect(mapStateToProps, MapDispatchToProps({

@@ -1,4 +1,4 @@
-export function changeCountries(countries: Array<any>) {
+export function saveContries(countries: Array<any>) {
   return {
     type: 'CHANGE_COUNTRIES',
     countries,
@@ -6,5 +6,5 @@ export function changeCountries(countries: Array<any>) {
 }
 
 export default {
-  changeCountries,
+  saveContries,
 };

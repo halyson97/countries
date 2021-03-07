@@ -8,7 +8,6 @@ const GET_COUNTRIES = gql`
             flag {
               emoji
               svgFile
-              asdasd
             }
           }
     }
