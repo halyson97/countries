@@ -1,9 +1,21 @@
 import React from 'react';
 
-function App() {
+import { connect } from 'react-redux';
+
+import { MapDispatchToProps } from './utils/props';
+import * as countriesActions from './redux/actions/countries';
+
+function App(props: any) {
+  console.log(props);
   return (
     <div>Hello world</div>
   );
 }
 
-export default App;
+const mapStateToProps = (state: any) => ({
+  countriesState: state.countries,
+});
+
+export default connect(mapStateToProps, MapDispatchToProps({
+  ...countriesActions,
+}))(App);
