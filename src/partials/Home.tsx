@@ -7,6 +7,7 @@ import * as countriesActions from '../redux/actions/countries';
 import Container from '../components/Container';
 import Preloader from '../components/Preloader';
 import Error from '../components/Error';
+import CountriesList from '../components/CountriesList';
 
 import { useGetCountries } from '../hooks/countries/useGetCountries';
 
@@ -32,7 +33,9 @@ function Home({ saveContries, countriesState }: any) {
       {
         !loading
         && countriesState
-        && <div>Partial home</div>
+        && (
+        <CountriesList countries={countriesState} />
+        )
       }
     </Container>
   );

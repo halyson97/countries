@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   container: {
-    backgroundColor: 'blue',
     width: '100%',
     margin: 'auto',
     maxWidth: '1000px',
