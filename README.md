@@ -38,6 +38,7 @@ Para executar o app em modo desenvolvimento, basta:
 ```bash
 # subir servidor local
 npm start
+```
 
 ## 
 Desenvolvido por [Halyson Rezende](https://github.com/halyson97).
