@@ -14,7 +14,7 @@ import client from './apollo';
 
 const { store, persistor } = Store();
 
-export default function () {
+export default function Config() {
   return (
     <ApolloProvider client={client}>
       <Provider store={store}>
