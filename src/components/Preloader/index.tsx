@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Container() {
+function Preloader() {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -21,4 +21,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default Preloader;

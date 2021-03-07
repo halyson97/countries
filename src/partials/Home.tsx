@@ -6,6 +6,7 @@ import { MapDispatchToProps } from '../utils/props';
 import * as countriesActions from '../redux/actions/countries';
 import Container from '../components/Container';
 import Preloader from '../components/Preloader';
+import Error from '../components/Error';
 
 import { useGetCountries } from '../hooks/countries/useGetCountries';
 
@@ -18,6 +19,10 @@ function Home() {
     <Container>
       {
         loading && <Preloader />
+      }
+
+      {
+        error && <Error error={error} />
       }
 
       <div>Partial home</div>
