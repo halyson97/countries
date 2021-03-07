@@ -1,5 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -58,12 +60,27 @@ const useStyles = makeStyles(() => ({
   domain: {
     marginRight: 5,
   },
+  contentEdit: {
+    top: '0',
+    right: '0',
+    cursor: 'pointer',
+    padding: '5px',
+    position: 'absolute',
+    boxSizing: 'border-box',
+    color: '#03a9f4',
+  },
 }));
 
-const CountryAbout: React.FC<any> = ({ country }: any) => {
+const CountryAbout: React.FC<any> = ({ country, onEdit }: any) => {
   const classes = useStyles();
 
   const formatNumber = (number?: number) => number?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+
+  const handleEdit = () => {
+    if (onEdit) {
+      onEdit();
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -90,6 +107,12 @@ const CountryAbout: React.FC<any> = ({ country }: any) => {
           {country.topLevelDomains?.length === 0
           && <span>Não informado</span>}
         </div>
+      </div>
+
+      <div className={classes.contentEdit}>
+        <Tooltip title="Editar país">
+          <EditIcon onClick={handleEdit} onKeyDown={handleEdit} />
+        </Tooltip>
       </div>
     </div>
   );
