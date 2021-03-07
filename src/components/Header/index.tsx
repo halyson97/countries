@@ -35,6 +35,9 @@ const useStyles = makeStyles(() => ({
     fontWeight: 400,
     marginLeft: 20,
   },
+  links: {
+    display: 'flex',
+  },
   link: {
     padding: 10,
     fontSize: '1.1rem',
@@ -66,6 +69,16 @@ const Header: React.FC = () => {
           <div className={classes.title}>Countries</div>
         </div>
       </Link>
+
+      <div className={classes.links}>
+        <Link to="/history" className={classes.link}>
+          <div>Histórico</div>
+        </Link>
+        <Link to="/favorites" className={classes.link}>
+          <div>Favoritos</div>
+        </Link>
+
+      </div>
 
     </header>
   );

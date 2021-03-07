@@ -11,12 +11,19 @@ import Home from './partials/Home';
 import About from './partials/About';
 
 import Header from './components/Header';
+import News from './partials/News';
 
 function App() {
   return (
     <Router>
       <Header />
       <Switch>
+        <Route exact path="/history">
+          <News />
+        </Route>
+        <Route exact path="/favorites">
+          <News />
+        </Route>
         <Route exact path="/about/:name">
           <About />
         </Route>
